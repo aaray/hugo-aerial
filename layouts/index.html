@@ -31,7 +31,9 @@
 						<nav>
 							<ul>
 								{{ range .Site.Params.social }}
-								<li><a href="{{ .link | safeURL }}" class="icon fa-{{ .icon }}"><span class="label">{{ .medium }}</span></a></li>
+								{{ if .active}}
+								<li><a href="{{ .link | safeURL }}" class="icon fa-{{ .icon }}"><span class="label">{{ .medium }} {{.active}}</span></a></li>
+								{{ end }}
 								{{ end }}
 							</ul>
 						</nav>
@@ -39,7 +41,7 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<span class="copyright">&copy; {{ .Site.Params.copyright }}. Design: <a href="http://html5up.net">HTML5 UP</a>. Powered by <a href="https://www.gohugo.io/">Hugo.</a></span>
+						<span class="copyright">&copy; {{ .Site.Params.copyright }}. Design: <a href="http://html5up.net">HTML5 UP</a>. Built using <a href="https://klueless.io">KlueLess.io</a> Static App Generator.</span>
 					</footer>
 
 			</div>
